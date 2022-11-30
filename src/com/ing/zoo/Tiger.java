@@ -3,25 +3,22 @@ package com.ing.zoo;
 import java.util.Random;
 
 public class Tiger extends TrickAnimal implements Carnivore{
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
 
-    public Tiger()
-    {
+    public Tiger(String name) {
+        super(name);
+        this.animalSpecies = "Tiger";
     }
 
     public void sayHello()
     {
         helloText = "rraaarww";
-        System.out.println(helloText);
+        System.out.printf("%s the %s says %s.\n", this.name, this.animalSpecies, this.helloText);
     }
 
     public void eatMeat()
     {
         eatText = "nomnomnom oink wubalubadubdub";
-        System.out.println(eatText);
+        System.out.printf("%s the %s eats and says %s.\n", this.name, this.animalSpecies, this.eatText);
     }
 
     public void performTrick()
@@ -36,6 +33,6 @@ public class Tiger extends TrickAnimal implements Carnivore{
         {
             trick = "scratches ears";
         }
-        System.out.println(trick);
+        System.out.printf("%s the %s %s.\n", this.name, this.animalSpecies, this.trick);
     }
 }

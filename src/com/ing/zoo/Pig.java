@@ -3,26 +3,29 @@ package com.ing.zoo;
 import java.util.Random;
 
 public class Pig extends TrickAnimal implements Omnivore{
-    public Pig()
-    {
+
+    public Pig(String name) {
+        super(name);
+        this.animalSpecies = "Pig";
+
     }
 
     public void sayHello()
     {
         helloText = "splash";
-        System.out.println(helloText);
+        System.out.printf("%s the %s says %s.\n", this.name, this.animalSpecies, this.helloText);
     }
 
     public void eatLeaves()
     {
         eatText = "munch munch oink";
-        System.out.println(eatText);
+        System.out.printf("%s the %s eats and says %s.\n", this.name, this.animalSpecies, this.eatText);
     }
 
     public void eatMeat()
     {
         eatText = "nomnomnom oink thx";
-        System.out.println(eatText);
+        System.out.printf("%s the %s eats and says %s.\n", this.name, this.animalSpecies, this.eatText);
     }
 
     public void performTrick()
@@ -37,6 +40,6 @@ public class Pig extends TrickAnimal implements Omnivore{
         {
             trick = "runs in circles";
         }
-        System.out.println(trick);
+        System.out.printf("%s the %s %s.\n", this.name, this.animalSpecies, this.trick);
     }
 }
