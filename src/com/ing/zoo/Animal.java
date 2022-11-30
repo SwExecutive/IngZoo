@@ -1,7 +1,7 @@
 package com.ing.zoo;
 
-abstract class Animal {
-    String name;
+public abstract class Animal {
+    public String name;
     public String helloText;
     public String eatText;
     public String animalSpecies;

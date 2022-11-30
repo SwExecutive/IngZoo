@@ -1,9 +1,16 @@
 package com.ing.zoo;
 
+import com.ing.zoo.animals.*;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Program which features a zoo where you can add animals and give them commands.
+ *
+ * @author Kwok Yee Chu & Djangesh Sardjoe
+ */
 public class Zoo {
     public static void main(String[] args) {
         String[] commands = new String[4];
@@ -31,6 +38,12 @@ public class Zoo {
         Zebra marty = new Zebra("marty");
         animalCollection.put(marty.name, marty);
 
+        Elephant karan = new Elephant("karan");
+        animalCollection.put(karan.name, karan);
+
+        Bear honey = new Bear("honey");
+        animalCollection.put(honey.name, honey);
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
 
@@ -38,25 +51,23 @@ public class Zoo {
         String input = scanner.nextLine();
 
 //      Use method that corresponds with the given command. Remove given command from input string.
-        if(input.contains(commands[0])){
-            handleHello(animalCollection,input.replace(commands[0], ""));
-        }else if(input.contains(commands[1])){
-            handleLeaves(animalCollection,input.replace(commands[1], ""));
+        if (input.contains(commands[0])) {
+            handleHello(animalCollection, input.replace(commands[0], ""));
+        } else if (input.contains(commands[1])) {
+            handleLeaves(animalCollection, input.replace(commands[1], ""));
 
-        }else if(input.contains(commands[2])){
-            handleMeat(animalCollection,input.replace(commands[2], ""));
+        } else if (input.contains(commands[2])) {
+            handleMeat(animalCollection, input.replace(commands[2], ""));
 
-        }else if(input.contains(commands[3])){
-            handleTrick(animalCollection,input.replace(commands[3], ""));
+        } else if (input.contains(commands[3])) {
+            handleTrick(animalCollection, input.replace(commands[3], ""));
 
-        }
-        else
-        {
+        } else {
             System.out.println("Unknown command: " + input);
         }
     }
 
-    public static void handleHello(Map<String, Animal>animalCollection, String text){
+    public static void handleHello(Map<String, Animal> animalCollection, String text) {
 //      Trim leftover string to remove whitespaces and to get animal name.
         String trimmedInput = text.trim();
 
@@ -71,7 +82,7 @@ public class Zoo {
         }
     }
 
-    public static void handleLeaves(Map<String, Animal>animalCollection, String text){
+    public static void handleLeaves(Map<String, Animal> animalCollection, String text) {
         //      Trim leftover string to remove whitespaces and to get animal name.
         String trimmedInput = text.trim();
 
@@ -92,7 +103,7 @@ public class Zoo {
         }
     }
 
-    public static void handleMeat(Map<String, Animal>animalCollection, String text){
+    public static void handleMeat(Map<String, Animal> animalCollection, String text) {
         //      Trim leftover string to remove whitespaces and to get animal name.
         String trimmedInput = text.trim();
 
@@ -113,7 +124,7 @@ public class Zoo {
         }
     }
 
-    public static void handleTrick(Map<String, Animal>animalCollection, String text){
+    public static void handleTrick(Map<String, Animal> animalCollection, String text) {
         //      Trim leftover string to remove whitespaces and to get animal name.
         String trimmedInput = text.trim();
 
