@@ -4,7 +4,7 @@ public class Zebra extends Animal implements Herbivore{
 
     public Zebra(String name) {
         super(name);
-        this.animalSpecies = "Zebra";
+        this.animalSpecies = "zebra";
 
     }
 

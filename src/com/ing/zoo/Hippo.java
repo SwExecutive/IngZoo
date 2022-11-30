@@ -4,7 +4,7 @@ public class Hippo extends Animal implements Herbivore{
 
     public Hippo(String name) {
         super(name);
-        this.animalSpecies = "Hippo";
+        this.animalSpecies = "hippo";
     }
 
     public void sayHello()

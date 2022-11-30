@@ -6,7 +6,7 @@ public class Pig extends TrickAnimal implements Omnivore{
 
     public Pig(String name) {
         super(name);
-        this.animalSpecies = "Pig";
+        this.animalSpecies = "pig";
 
     }
 

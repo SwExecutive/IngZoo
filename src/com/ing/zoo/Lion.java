@@ -3,7 +3,7 @@ package com.ing.zoo;
 public class Lion extends Animal implements Carnivore{
     public Lion(String name) {
         super(name);
-        this.animalSpecies = "Lion";
+        this.animalSpecies = "lion";
     }
 
     public void sayHello()

@@ -41,13 +41,13 @@ public class Zoo {
         if(input.contains(commands[0])){
             handleHello(animalCollection,input.replace(commands[0], ""));
         }else if(input.contains(commands[1])){
-            handleHello(animalCollection,input.replace(commands[1], ""));
+            handleLeaves(animalCollection,input.replace(commands[1], ""));
 
         }else if(input.contains(commands[2])){
-            handleHello(animalCollection,input.replace(commands[2], ""));
+            handleMeat(animalCollection,input.replace(commands[2], ""));
 
         }else if(input.contains(commands[3])){
-            handleHello(animalCollection,input.replace(commands[3], ""));
+            handleTrick(animalCollection,input.replace(commands[3], ""));
 
         }
         else
@@ -64,21 +64,73 @@ public class Zoo {
         if (trimmedInput.length() == 0) {
             animalCollection.values().forEach(Animal::sayHello);
         }
+//      If leftover input is not empty and corresponds with an animalCollection keyname, let only that animal say hello.
         if (animalCollection.containsKey(trimmedInput)) {
             Animal animal = animalCollection.get(trimmedInput);
             animal.sayHello();
         }
     }
 
-    public static void handleLeaves(){
+    public static void handleLeaves(Map<String, Animal>animalCollection, String text){
+        //      Trim leftover string to remove whitespaces and to get animal name.
+        String trimmedInput = text.trim();
 
+        //      If leftover input is empty, let all animals eat leaves.
+        if (trimmedInput.length() == 0) {
+            animalCollection.values().forEach(animal -> {
+                if (animal instanceof Herbivore) {
+                    ((Herbivore) animal).eatLeaves();
+                }
+            });
+        }
+        //      If leftover input is not empty and corresponds with an animalCollection keyname, let only that animal eat leaves.
+        if (animalCollection.containsKey(trimmedInput)) {
+            Animal animal = animalCollection.get(trimmedInput);
+            if (animal instanceof Herbivore) {
+                ((Herbivore) animal).eatLeaves();
+            }
+        }
     }
 
-    public static void handleMeat(){
+    public static void handleMeat(Map<String, Animal>animalCollection, String text){
+        //      Trim leftover string to remove whitespaces and to get animal name.
+        String trimmedInput = text.trim();
 
+        //      If leftover input is empty, let all animals eat meat.
+        if (trimmedInput.length() == 0) {
+            animalCollection.values().forEach(animal -> {
+                if (animal instanceof Carnivore) {
+                    ((Carnivore) animal).eatMeat();
+                }
+            });
+        }
+        //      If leftover input is not empty and corresponds with an animalCollection keyname, let only that animal eat meat.
+        if (animalCollection.containsKey(trimmedInput)) {
+            Animal animal = animalCollection.get(trimmedInput);
+            if (animal instanceof Carnivore) {
+                ((Carnivore) animal).eatMeat();
+            }
+        }
     }
 
-    public static void handleTrick(){
+    public static void handleTrick(Map<String, Animal>animalCollection, String text){
+        //      Trim leftover string to remove whitespaces and to get animal name.
+        String trimmedInput = text.trim();
 
+        //      If leftover input is empty, let all animals if able perform a trick.
+        if (trimmedInput.length() == 0) {
+            animalCollection.values().forEach(animal -> {
+                if (animal instanceof TrickAnimal) {
+                    ((TrickAnimal) animal).performTrick();
+                }
+            });
+        }
+        //      If leftover input is not empty and corresponds with an animalCollection keyname, let only that animal if able perform a trick.
+        if (animalCollection.containsKey(trimmedInput)) {
+            Animal animal = animalCollection.get(trimmedInput);
+            if (animal instanceof TrickAnimal) {
+                ((TrickAnimal) animal).performTrick();
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ public class Tiger extends TrickAnimal implements Carnivore{
 
     public Tiger(String name) {
         super(name);
-        this.animalSpecies = "Tiger";
+        this.animalSpecies = "tiger";
     }
 
     public void sayHello()
