@@ -1,7 +1,4 @@
 package com.ing.zoo;
 
-public interface Omnivore {
-    public void eatLeaves();
-
-    public void eatMeat();
+public interface Omnivore extends Carnivore,Herbivore{
 }

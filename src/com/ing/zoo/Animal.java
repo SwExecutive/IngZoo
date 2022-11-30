@@ -5,8 +5,5 @@ abstract class Animal {
     public String helloText;
     public String eatText;
 
-    public void sayHello()
-    {
-
-    }
+    public abstract void sayHello();
 }
